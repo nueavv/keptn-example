@@ -1,0 +1,32 @@
+apiVersion: metrics.keptn.sh/v1beta1
+kind: KeptnMetric
+metadata:
+  name: available-cpus
+spec:
+  provider:
+    # 👇 (필수) 데이터 소스의 인스턴스 이름 
+    name: dev-prometheus 
+  # 👇 (필수) 메트릭을 얻는데 사용되는 공급자 별 쿼리 문
+  query: "sum(kube_node_status_capacity{resources=`cpu`})"
+  # 👇 (필수) 지표 업데이트 간격 
+  fetchIntervalSeconds: 10
+  # # 👇 (선택) 지표의 범위와 집계 방법
+  # range: 
+  #   # 쿼리 인터벌 (기본 값 5m)
+  #   interval: ""
+  #   # 그래프의 해상도를 조절하기 위한 값
+  #   step: ""
+  #   # 데이터 집계 방법
+  #   aggregation: <p90|p95|p99|max|min|avg|median>
+  #   # 지난 데이터 집계 결과를 얼마동안 저장하고 있을 지 
+  #   storedResults: 
+  # # 👇 keptn이 지표를 가져오면서 추가한 값
+  # # 지표 가져오지 못한경우 그 이유에 대해 상세
+  # # 가져오는 경우 평가된 시간등에 대해 기록 
+  # status:
+  #   properties:
+  #     # 사람이 읽을 수 있는 형식으로 나타낸 
+  #     value:
+  #     rawValue:
+  #     errMsg:
+  #     lastUpdated:

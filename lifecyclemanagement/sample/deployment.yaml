@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sample-app
+  name: sample-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/name: sample-app
+        app.kubernetes.io/part-of: sample
+        app.kubernetes.io/version: "1.25.4"
+        app: sample-app
+    spec:
+      containers:
+      - image: nginx:1.25.4
+        name: nginx
+        resources: {}
+status: {}

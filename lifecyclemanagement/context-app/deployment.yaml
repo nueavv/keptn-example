@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: context-app
+  name: context-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: context-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/name: context-app
+        app.kubernetes.io/part-of: context
+        app.kubernetes.io/version: "1.25.4"
+        app: context-app
+    spec:
+      containers:
+      - image: nginx:1.25.4
+        name: nginx
+        resources: {}
+status: {}

@@ -1,0 +1,7 @@
+apiVersion: lifecycle.keptn.sh/v1beta1
+kind: KeptnAppContext
+metadata:
+  name: context
+spec:
+  preDeploymentTasks:
+    - pre-deployment-check

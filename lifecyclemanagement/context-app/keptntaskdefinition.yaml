@@ -6,5 +6,9 @@ spec:
   function:
     inline:
       code: |
-        console.error("I failed")
-        process.exit(1)
+        console.error("Success")
+        
+    # inline:
+    #   code: |
+    #     console.error("I failed")
+    #     process.exit(1)
